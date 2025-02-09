@@ -146,6 +146,10 @@ menuEditor.empty();
 
 ## Changelog
 
+#### v1.1.1
+
+* Fix: import styles.css
+
 #### v1.1.0
 
 * **New feature:** maxLevel option (zero-based value, where zero indicates the first level of the nested menu).
