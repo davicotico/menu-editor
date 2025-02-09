@@ -9,10 +9,10 @@ export interface BaseItemData {
 
 type ItemDataset = Record<string, string> & BaseItemData;
 
-type ItemData = Record<string, string | Array<ItemData>> & BaseItemData;
+type ItemData = Record<string, string | undefined | Array<ItemData>> & BaseItemData;
 
 interface NestedItemData extends ItemData {
-  children: Array<NestedItemData>;
+  children?: Array<NestedItemData>;
 }
 
 interface ItemOptions {

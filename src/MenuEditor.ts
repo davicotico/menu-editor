@@ -61,8 +61,10 @@ export default class MenuEditor {
       item.buttonGroup.onClickDelete(this.listenerDeleteButton);
       item.buttonGroup.onClickEdit(this.listenerEditButton);
       setDatasetToElement(item.getElement(), item.getDataset());
-      if (elem.children.length > 0) {
-        item.addArray(elem.children);
+      if (Array.isArray(elem.children)) {
+        if (elem.children.length > 0) {
+          item.addArray(elem.children);
+        }
       }
       this.menuContainer.add(item);
     });
