@@ -56,7 +56,7 @@ menuEditor.onClickEdit((event) => {
 	menuEditor.edit(event.item); // set the item in edit mode
 });
 
-menuEditor.ondragEnd((event) => {
+menuEditor.onDragEnd((event) => {
 	let output = editor.getString();
 	console.log(output);
 	// add logic here
