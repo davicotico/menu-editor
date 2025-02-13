@@ -55,6 +55,13 @@ menuEditor.onClickEdit((event) => {
 	console.log(itemData);
 	menuEditor.edit(event.item); // set the item in edit mode
 });
+
+menuEditor.ondragEnd((event) => {
+	let output = editor.getString();
+	console.log(output);
+	// add logic here
+});
+
 ```
 
 ### Setting the data

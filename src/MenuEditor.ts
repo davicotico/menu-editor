@@ -11,6 +11,7 @@ export default class MenuEditor {
   private currentItem: ElementItem | null = null;
   protected listenerDeleteButton: Itemlistener;
   protected listenerEditButton: Itemlistener;
+  protected listenerDragEnd: (_evt: Sortable.SortableEvent) => void;
   protected sortableClassname: string = '';
   protected options: MenuEditorOptions;
 
@@ -21,6 +22,7 @@ export default class MenuEditor {
     this.menuContainer.setOptions({ sortableClassname: this.sortableClassname });
     this.listenerDeleteButton = () => {};
     this.listenerEditButton = () => {};
+    this.listenerDragEnd = () => {};
   }
 
   public add(data: ItemDataset) {
@@ -100,6 +102,10 @@ export default class MenuEditor {
     this.listenerDeleteButton = listener;
   }
 
+  public onDragEnd(listener: (evt: Sortable.SortableEvent) => void) {
+      this.listenerDragEnd = listener;
+  }
+
   public empty(): void {
     this.menuContainer.empty();
   }
@@ -130,6 +136,7 @@ export default class MenuEditor {
         },
         onEnd: (_evt) => {
           updateLevels(this.menuContainer.getElement());
+          this.listenerDragEnd(_evt);
         },
         animation: 150,
         fallbackOnBody: true,
