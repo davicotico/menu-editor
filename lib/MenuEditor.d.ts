@@ -1,7 +1,7 @@
-import Sortable from "sortablejs";
-import { Item } from "./Item";
-import { NestedItemData, Itemlistener, ItemDataset, ItemData, MenuEditorOptions } from "./types";
-import { ElementItem } from "./ElementItem";
+import { default as Sortable } from 'sortablejs';
+import { Item } from './Item';
+import { NestedItemData, Itemlistener, ItemDataset, ItemData, MenuEditorOptions } from './types';
+import { ElementItem } from './ElementItem';
 export default class MenuEditor {
     private menuContainer;
     private currentItem;

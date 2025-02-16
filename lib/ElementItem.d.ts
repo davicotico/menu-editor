@@ -1,4 +1,4 @@
-import { ItemDataset, ItemOptions } from "./types";
+import { ItemDataset, ItemOptions } from './types';
 export interface ElementItem {
     setOptions(options: ItemOptions): void;
     setDataset(dataset: ItemDataset): void;

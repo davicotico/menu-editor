@@ -1,4 +1,4 @@
-import { ElementItem } from "./ElementItem";
+import { ElementItem } from './ElementItem';
 export declare class Collection {
     protected items: Array<ElementItem>;
     constructor();

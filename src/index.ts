@@ -1,6 +1,6 @@
 /**
  * @author  David Tomas Ticona Saravia <davicotico@yandex.com>
- * @version 1.1.0
+ * @version 1.2.0
  * @license MIT
  */
 import './scss/styles.scss';

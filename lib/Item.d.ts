@@ -1,7 +1,7 @@
-import { ElementItem } from "./ElementItem";
-import { ItemData, Itemlistener, NestedItemData, ItemOptions, ItemDataset } from "./types";
-import { ButtonGroup } from "./ButtonGroup";
-import { Collection } from "./Collection";
+import { ElementItem } from './ElementItem';
+import { ItemData, Itemlistener, NestedItemData, ItemOptions, ItemDataset } from './types';
+import { ButtonGroup } from './ButtonGroup';
+import { Collection } from './Collection';
 export declare class Item implements ElementItem {
     protected element: HTMLDivElement;
     protected dataset: ItemDataset;

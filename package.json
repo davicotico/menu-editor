@@ -11,9 +11,9 @@
       "import": "./lib/index.js",
       "require": "./lib/index.umd.js"
     },
-    "./lib/css/": {
-      "import": "./lib/css/",
-      "require": "./lib/css/"
+    "./lib/css/*": {
+      "import": "./lib/css/*",
+      "require": "./lib/css/*"
     }
   },
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davicotico/Menu-Editor.git"
+    "url": "git+https://github.com/davicotico/menu-editor.git"
   },
   "keywords": [
     "menu-editor",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davicotico/Menu-Editor/issues"
+    "url": "https://github.com/davicotico/menu-editor/issues"
   },
   "homepage": "https://davidticona.com/demos/javascript-menu-editor/",
   "devDependencies": {
@@ -47,8 +47,8 @@
     "@types/sortablejs": "^1.15.1",
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2",
-    "vite-plugin-dts": "^2.3.0"
+    "vite": "^4.5.9",
+    "vite-plugin-dts": "^4.5.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",

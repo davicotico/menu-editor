@@ -69,7 +69,7 @@ export class Item implements ElementItem {
       mi.buttonGroup.onClickDelete(this.listenerDeleteButton);
       mi.buttonGroup.onClickEdit(this.listenerEditButton);
       setDatasetToElement(mi.getElement(), mi.getDataset());
-      if (item.children.length > 0) {
+      if (item.children != undefined && item.children.length > 0) {
         mi.addArray(item.children);
       }
       this.add(mi);

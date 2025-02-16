@@ -1,6 +1,6 @@
-import { ElementItem } from "./ElementItem";
-import { ItemEvent } from "./ItemEvent";
-import { ItemParameters } from "./types";
+import { ElementItem } from './ElementItem';
+import { ItemEvent } from './ItemEvent';
+import { ItemParameters } from './types';
 declare class Button {
     private button;
     constructor(html: string);

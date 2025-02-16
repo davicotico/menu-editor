@@ -1,9 +1,11 @@
 # Menu Editor
+
 Vanilla Javascript Menu Editor Library (made with Typescript). 
 
 ## [>>> Demo <<<](https://davidticona.com/demos/javascript-menu-editor/)
 
 ## Install
+
 Via NPM
 
 ```
@@ -11,12 +13,13 @@ npm install @davicotico/menu-editor
 ```
 
 Via CDN
+
 ```html
 <!-- Styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/davicotico/Menu-Editor@1.1.0/dist/styles.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/davicotico/menu-editor@1.2.0/dist/styles.min.css">
 
 <!-- and the javascript file -->
-<script src="https://cdn.jsdelivr.net/gh/davicotico/Menu-Editor@1.1.0/dist/menu-editor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/davicotico/menu-editor@1.2.0/dist/menu-editor.min.js"></script>
 <script>
 	var menuEditor = new MenuEditor('element-id', { maxLevel: 3 });
 </script>
@@ -43,6 +46,7 @@ const menuEditor = new MenuEditor('element-id', { maxLevel: 3 });
 ```
 
 ### Setting the Events
+
 ```js
 menuEditor.onClickDelete((event) => {
 	if (confirm('Do you want to delete the item ' + event.item.getDataset().text)) {
@@ -61,12 +65,12 @@ menuEditor.onDragEnd((event) => {
 	console.log(output);
 	// add logic here
 });
-
 ```
 
 ### Setting the data
 
 The data
+
 ```js
 var nestedData = [
 	{
@@ -107,17 +111,21 @@ var nestedData = [
 	}
 ];
 ```
+
 The method:
+
 ```js
 menuEditor.setArray(nestedData);
 ```
 
 ### Mount the menu editor
+
 ```js
 menuEditor.mount();
 ```
 
 ### Add a new item
+
 ```js
 let newItem = {
     text: txtText.value, // required
@@ -130,7 +138,9 @@ menuEditor.add(newItem);
 ```
 
 ### Update an item
+
 The menu editor must have an item in edit mode. See `onClickEdit` event in **Events** section
+
 ```js
 let data = {
 	text: txtText.value,
@@ -140,7 +150,9 @@ let data = {
 };
 menuEditor.update(data);
 ```
+
 ### Output
+
 ```js
 let output = menuEditor.getString();
 console.log(output);
@@ -151,17 +163,10 @@ console.log(output);
 menuEditor.empty();
 ```
 
-## Changelog
+## DEV mode
 
-#### v1.1.1
+Run this command
 
-* Fix: import styles.css
-
-#### v1.1.0
-
-* **New feature:** maxLevel option (zero-based value, where zero indicates the first level of the nested menu).
-* Improvements in the layout of items and buttons.
-
-#### v1.0.0 
-
-* First release
+```shell
+npm run dev
+```

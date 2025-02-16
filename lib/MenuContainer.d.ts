@@ -1,6 +1,6 @@
-import { ElementItem } from "./ElementItem";
-import { Collection } from "./Collection";
-import { ItemOptions } from "./types";
+import { ElementItem } from './ElementItem';
+import { Collection } from './Collection';
+import { ItemOptions } from './types';
 export declare class MenuContainer {
     protected element: HTMLDivElement;
     protected id: string;
