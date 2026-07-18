@@ -1,4 +1,5 @@
-import { MenuEditor }  from '../src/index'
+import { MenuEditor }  from '../src/index';
+import '../src/scss/styles.scss';
 
 const json = [
 	{

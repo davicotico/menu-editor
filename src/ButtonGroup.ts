@@ -8,7 +8,7 @@ class Button {
     
     constructor(html: string) {
         this.button.innerHTML = html;
-        this.button.classList.add('btn', 'btn-secondary');
+        this.button.classList.add('jme-btn', 'jme-btn-secondary');
     }
     public onClick(f: EventListenerOrEventListenerObject) {
         this.button.addEventListener('click', f);
@@ -51,7 +51,7 @@ export class ButtonGroup {
     }
 
     public mount() {
-        this.container.classList.add('btn-group', 'btn-group-sm');
+        this.container.classList.add('jme-btn-group', 'jme-btn-group-sm');
         this.container.append(this.buttons.edit.getElement());
         this.container.append(this.buttons.delete.getElement());
     }

@@ -1,0 +1,142 @@
+// Make the div behave like a button
+.jme-btn-group,
+.jme-btn-group-vertical {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+
+  > .jme-btn {
+    position: relative;
+    flex: 1 1 auto;
+  }
+
+  // Bring the hover, focused, and "active" buttons to the front to overlay
+  // the borders properly
+  > .btn-check:checked + .jme-btn,
+  > .btn-check:focus + .jme-btn,
+  > .jme-btn:hover,
+  > .jme-btn:focus,
+  > .jme-btn:active,
+  > .jme-btn.active {
+    z-index: 1;
+  }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.btn-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .input-group {
+    width: auto;
+  }
+}
+
+.jme-btn-group {
+  @include border-radius($btn-border-radius);
+
+  // Prevent double borders when buttons are next to each other
+  > :not(.btn-check:first-child) + .jme-btn,
+  > .jme-btn-group:not(:first-child) {
+    margin-left: calc(#{$btn-border-width} * -1); // stylelint-disable-line function-disallowed-list
+  }
+
+  // Reset rounded corners
+  > .jme-btn:not(:last-child):not(.dropdown-toggle),
+  > .jme-btn.dropdown-toggle-split:first-child,
+  > .jme-btn-group:not(:last-child) > .jme-btn {
+    @include border-end-radius(0);
+  }
+
+  // The left radius should be 0 if the button is:
+  // - the "third or more" child
+  // - the second child and the previous element isn't `.btn-check` (making it the first child visually)
+  // - part of a btn-group which isn't the first child
+  > .jme-btn:nth-child(n + 3),
+  > :not(.btn-check) + .jme-btn,
+  > .jme-btn-group:not(:first-child) > .jme-btn {
+    @include border-start-radius(0);
+  }
+}
+
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
+
+.jme-btn-group-sm > .jme-btn { @extend .jme-btn-sm; }
+.jme-btn-group-lg > .jme-btn { @extend .jme-btn-lg; }
+
+
+//
+// Split button dropdowns
+//
+
+.dropdown-toggle-split {
+  padding-right: $btn-padding-x * .75;
+  padding-left: $btn-padding-x * .75;
+
+  &::after,
+  .dropup &::after,
+  .dropend &::after {
+    margin-left: 0;
+  }
+
+  .dropstart &::before {
+    margin-right: 0;
+  }
+}
+
+.jme-btn-sm + .dropdown-toggle-split {
+  padding-right: $btn-padding-x-sm * .75;
+  padding-left: $btn-padding-x-sm * .75;
+}
+
+.jme-btn-lg + .dropdown-toggle-split {
+  padding-right: $btn-padding-x-lg * .75;
+  padding-left: $btn-padding-x-lg * .75;
+}
+
+
+// The clickable button for toggling the menu
+// Set the same inset shadow as the :active state
+.jme-btn-group.show .dropdown-toggle {
+  @include box-shadow($btn-active-box-shadow);
+
+  // Show no shadow for `.btn-link` since it has no other button styles.
+  &.btn-link {
+    @include box-shadow(none);
+  }
+}
+
+
+//
+// Vertical button groups
+//
+
+.jme-btn-group-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  > .jme-btn,
+  > .jme-btn-group {
+    width: 100%;
+  }
+
+  > .jme-btn:not(:first-child),
+  > .jme-btn-group:not(:first-child) {
+    margin-top: calc(#{$btn-border-width} * -1); // stylelint-disable-line function-disallowed-list
+  }
+
+  // Reset rounded corners
+  > .jme-btn:not(:last-child):not(.dropdown-toggle),
+  > .jme-btn-group:not(:last-child) > .jme-btn {
+    @include border-bottom-radius(0);
+  }
+
+  > .jme-btn ~ .jme-btn,
+  > .jme-btn-group:not(:first-child) > .jme-btn {
+    @include border-top-radius(0);
+  }
+}
